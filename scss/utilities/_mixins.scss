@@ -1,4 +1,3 @@
-// Mixin responsive
 @mixin respond-to($bp) {
   @if $bp == tablet {
     @media (min-width: 768px) { @content; }
@@ -8,12 +7,11 @@
   }
 }
 
-// Mixin con parametros - animaciones
 @mixin animacion($nombre, $duracion: 1s, $tipo: ease) {
   animation: $nombre $duracion $tipo;
 }
 
-// Mixin flex - para no repetir codigo
+
 @mixin flex($justify: center, $align: center) {
   display: flex;
   justify-content: $justify;
