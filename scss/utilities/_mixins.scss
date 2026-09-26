@@ -1,16 +1,21 @@
-@mixin flex-center {
+// Mixin responsive
+@mixin respond-to($bp) {
+  @if $bp == tablet {
+    @media (min-width: 768px) { @content; }
+  }
+  @if $bp == desktop {
+    @media (min-width: 1024px) { @content; }
+  }
+}
+
+// Mixin con parametros - animaciones
+@mixin animacion($nombre, $duracion: 1s, $tipo: ease) {
+  animation: $nombre $duracion $tipo;
+}
+
+// Mixin flex - para no repetir codigo
+@mixin flex($justify: center, $align: center) {
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@mixin transition {
-  transition: all 0.3s ease;
-}
-
-@mixin tablet {
-  @media (min-width: 768px) { @content; }
-}
-@mixin desktop {
-  @media (min-width: 1024px) { @content; }
+  justify-content: $justify;
+  align-items: $align;
 }
