@@ -1,64 +1,21 @@
-@use '../utilities/variables' as *;
-@use '../utilities/mixins' as *;
-
-.contenedor-card {
-  display: grid;
-  gap: 16px;
-  grid-template-areas: "card1" "card2";
-  margin-top: 16px;
-
-  @include tablet {
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "card1 card2";
-  }
-  @include desktop {
-    gap: 24px;
-  }
-}
-.card:nth-child(1) { grid-area: card1; }
-.card:nth-child(2) { grid-area: card2; }
-
 .card {
-  background-color: $color-blanco;
-  border-radius: 16px;
+  @extend %hover-card;
+  animation: aparecer 0.8s ease forwards; 
+  
+  width: 100%;
   padding: 20px;
-  border: 1px solid $color-borde;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 12px;
-  @include transition;
 
-  &:hover {
-    transform: scale(1.03);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    border-color: $color-secundario;
+  @include respond-to(tablet) {
+    width: calc(100% / 2 - 40px); 
   }
-  &:active {
-    transform: scale(0.98);
+  @include respond-to(desktop) {
+    width: calc(100% / 3 - 40px);
   }
-}
-
-.servicios {
-  background-color: $color-blanco;
-  border-radius: 16px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
 
   img {
-    width: 100%;
-    border-radius: 12px;
+    transition: transform 0.3s ease; 
+    &:hover {
+      transform: scale(1.1) rotate(2deg); 
+    }
   }
-}
-
-#carouselNegocio, #carouselSobreMi {
-  .carousel-item img {
-    height: 450px;
-    object-fit: cover;
-    object-position: center;
-    @include tablet { height: 280px; }
-  }
-  .carousel-inner { overflow: hidden; }
 }
