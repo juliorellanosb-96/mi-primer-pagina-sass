@@ -1,5 +1,4 @@
 # Conexión Agencia Digital
-
 ## Descripción
 Conexión es una agencia de marketing digital que ofrece servicios de gestión de redes sociales, publicidad en Google Ads y Meta Ads, diseño web y branding para pymes y emprendedores en Córdoba, Argentina.
 
@@ -14,6 +13,12 @@ Conexión es una agencia de marketing digital que ofrece servicios de gestión d
 - CSS3 (con Bootstrap 5)
 - JavaScript (con AOS - Animate on Scroll)
 - SASS
+
+## Cómo correr el proyecto
+1. Cloná el repo
+2. Instalá SASS: `npm install -g sass`
+3. Compilá el SCSS: `sass --watch styles/styles.scss styles/styles.css`
+4. Abrí `index.html` en tu navegador
 
 ## Autor
 Julián Orellanos Brunengo
